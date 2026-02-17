@@ -9,13 +9,7 @@ export function CtaSection() {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSignIn = async () => {
-    alert('Button clicked! Check console for details.')
     console.log('🔵 handleSignIn called')
-    console.log('🔵 Environment check:', {
-      url: process.env.NEXT_PUBLIC_SUPABASE_URL,
-      hasAnonKey: !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-      siteUrl: process.env.NEXT_PUBLIC_SITE_URL
-    })
 
     setIsLoading(true)
 
@@ -37,7 +31,6 @@ export function CtaSection() {
       }
     } catch (err) {
       console.error('❌ Unexpected error:', err)
-      alert(`Unexpected error: ${err}`)
       setIsLoading(false)
     }
   }
